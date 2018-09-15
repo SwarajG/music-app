@@ -3,6 +3,7 @@ import 'antd/dist/antd.min.css';
 import './App.css';
 import Header from './Header';
 import SearchResult from './SearchResult';
+import LoginPage from './LoginPage';
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,10 @@ class App extends Component {
 
   render() {
     const { artistSearchList, isSearching, oldSearches } = this.state;
+    const isLogin = true;
+    if (isLogin) {
+      return <LoginPage />
+    }
     return (
       <div className="app_contianer">
         <Header onSerchArtist={this.onSerchArtist} setSearching={this.setSearching} />

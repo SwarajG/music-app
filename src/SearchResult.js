@@ -30,11 +30,16 @@ class SearchResult extends Component {
     </div>
   )
 
-  renderPopup = (popupVisible) => {
-    <Modal visible={popupVisible}>
-      Put old seraches here...
-    </Modal>
-  }
+  renderPopup = (popupVisible) => (
+      <Modal
+        title="Basic Modal"
+        visible={popupVisible}
+        onOk={this.hidePopup}
+        onCancel={this.hidePopup}
+      >
+        Put old seraches here...
+      </Modal>
+    )
 
   render() {
     const { artistSearchList, isSearching, oldSearches } = this.props;
@@ -43,12 +48,12 @@ class SearchResult extends Component {
     if (isSearching) {
       return (
         <div>
-          {this.renderPopup(popupVisible)}
           <div className="button_container">
             <Button type="primary" onClick={this.showPopup}>
               Old Searches
             </Button>
           </div>
+          {this.renderPopup(popupVisible)}
           <div className="search_result_container center_element">
             <Icon type="loading" theme="outlined" />
           </div>

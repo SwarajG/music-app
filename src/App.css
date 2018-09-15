@@ -25,3 +25,17 @@
   justify-content: center;
   padding-top: 140px;
 }
+
+.login_wrapper {
+  width: 300px;
+  margin: 100px auto;
+}
+
+.input_wrapper {
+  margin-bottom: 10px;
+}
+
+.submit_wrapper {
+  display: block;
+  text-align: center;
+}
